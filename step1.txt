@@ -1,0 +1,31 @@
+1. It’s time to run the file! Run the command node runtime.js in the same directory as where the file lives.
+Yay, did that! **High Five**
+
+2. In your notes document, take note of the timing result for the extraLargeArray results– 
+comparing when the extraLargeArray is passed to doublerAppend and doublerInsert.
+insert 1.961457975 s
+append 4.518282 ms
+
+
+3. Next, edit the code in runtime.js to obtain timing results for calling the two functions 
+with all of the differently sized arrays– tinyArray, smallArray, mediumArray, largeArray, and 
+extraLargeArray. Notate these in your document in some kind table table so that you can easily 
+compare the different values for the timers in relation to the size of the array that was passed
+ into each function.
+tinyArray- insert 62.434 μs, append 265.794 μs
+smallArray- insert 75.632 μs, append 258.253 μs 
+mediumArray- insert 274.765 μs, append 316.245 μs
+largeArray- insert 14.192035 ms append 852.481 μs
+
+4. Read over the results, and write a paragraph that explains the pattern you see. How does each 
+function “scale”? Which of the two functions scales better? How can you tell?
+Based on the information it appears the insert array takes the least amount of time to loop through the
+array on smaller arrays only. However, when the array grows in size the time complexity is less optimal.
+On larger scale arrays the append function works best and time complexity is at optimal capacity. 
+
+5. For extra credit, do some review / research on why the slower function is so slow, 
+and summarize the reasoning for this.
+.push() directly utilizes the current length property to add an element to the end of the array and
+decreases the length by 1 which makes it exceptionally faster for smaller arrays.
+.push() is a linear time complexity which means the algorithms will take proportionally longer to
+complete as the input grows in size. This is why it is not the optimal solution for larger arrays.
